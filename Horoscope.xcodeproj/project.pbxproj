@@ -3,19 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2B22FF0DA1A4FC15DE6A49 /* Pods_Horoscope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F682903CFA2A28B72B4424F /* Pods_Horoscope.framework */; };
 		2255304C24748452000E9633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255304B24748452000E9633 /* AppDelegate.swift */; };
 		2255304E24748452000E9633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255304D24748452000E9633 /* SceneDelegate.swift */; };
 		2255305024748452000E9633 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255304F24748452000E9633 /* ViewController.swift */; };
 		2255305324748452000E9633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2255305124748452000E9633 /* Main.storyboard */; };
 		2255305524748454000E9633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2255305424748454000E9633 /* Assets.xcassets */; };
 		2255305824748454000E9633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2255305624748454000E9633 /* LaunchScreen.storyboard */; };
+		2255306024789517000E9633 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2255305F24789517000E9633 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F682903CFA2A28B72B4424F /* Pods_Horoscope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Horoscope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2255304824748452000E9633 /* Horoscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horoscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2255304B24748452000E9633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2255304D24748452000E9633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,11 @@
 		2255305424748454000E9633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2255305724748454000E9633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2255305924748454000E9633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2255305F24789517000E9633 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		22BE7346247ED1B7001FA426 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22BE734A247ED1BC001FA426 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0BFACA60DB782EB325495A /* Pods-Horoscope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Horoscope.release.xcconfig"; path = "Target Support Files/Pods-Horoscope/Pods-Horoscope.release.xcconfig"; sourceTree = "<group>"; };
+		92BAE7151209340866B9CA1A /* Pods-Horoscope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Horoscope.debug.xcconfig"; path = "Target Support Files/Pods-Horoscope/Pods-Horoscope.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2B22FF0DA1A4FC15DE6A49 /* Pods_Horoscope.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				2255304A24748452000E9633 /* Horoscope */,
 				2255304924748452000E9633 /* Products */,
+				9AE41D2ED84DCA734EA418D9 /* Pods */,
+				2F11032BD73D083D2DA4BDC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +71,31 @@
 				2255304D24748452000E9633 /* SceneDelegate.swift */,
 				2255304F24748452000E9633 /* ViewController.swift */,
 				2255305124748452000E9633 /* Main.storyboard */,
+				2255305F24789517000E9633 /* ResultViewController.swift */,
 				2255305424748454000E9633 /* Assets.xcassets */,
 				2255305624748454000E9633 /* LaunchScreen.storyboard */,
 				2255305924748454000E9633 /* Info.plist */,
 			);
 			path = Horoscope;
+			sourceTree = "<group>";
+		};
+		2F11032BD73D083D2DA4BDC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22BE734A247ED1BC001FA426 /* SwiftyJSON.framework */,
+				22BE7346247ED1B7001FA426 /* Alamofire.framework */,
+				1F682903CFA2A28B72B4424F /* Pods_Horoscope.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AE41D2ED84DCA734EA418D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92BAE7151209340866B9CA1A /* Pods-Horoscope.debug.xcconfig */,
+				3F0BFACA60DB782EB325495A /* Pods-Horoscope.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2255305C24748454000E9633 /* Build configuration list for PBXNativeTarget "Horoscope" */;
 			buildPhases = (
+				FF278230E2A0C8790947B6FB /* [CP] Check Pods Manifest.lock */,
 				2255304424748452000E9633 /* Sources */,
 				2255304524748452000E9633 /* Frameworks */,
 				2255304624748452000E9633 /* Resources */,
+				1677FE0FA1818CFDD77DB41C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +166,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1677FE0FA1818CFDD77DB41C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Horoscope/Pods-Horoscope-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Horoscope/Pods-Horoscope-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Horoscope/Pods-Horoscope-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF278230E2A0C8790947B6FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Horoscope-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2255304424748452000E9633 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -141,6 +216,7 @@
 				2255305024748452000E9633 /* ViewController.swift in Sources */,
 				2255304C24748452000E9633 /* AppDelegate.swift in Sources */,
 				2255304E24748452000E9633 /* SceneDelegate.swift in Sources */,
+				2255306024789517000E9633 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +358,7 @@
 		};
 		2255305D24748454000E9633 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92BAE7151209340866B9CA1A /* Pods-Horoscope.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +377,7 @@
 		};
 		2255305E24748454000E9633 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F0BFACA60DB782EB325495A /* Pods-Horoscope.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

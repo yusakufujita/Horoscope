@@ -1,24 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P17-RK-lBo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--占い-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB8-kS-VOM">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Vzy-VI-4oS"/>
+                                    <constraint firstAttribute="width" constant="200" id="jG1-Pi-43l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <state key="normal" title="占う">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapHoroscopeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Z2-yb-XOJ"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zG-qr-HRD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="225"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jB8-kS-VOM" firstAttribute="top" secondItem="7zG-qr-HRD" secondAttribute="bottom" constant="35" id="EgB-ge-9sZ"/>
+                            <constraint firstItem="jB8-kS-VOM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fo4-7q-h4O"/>
+                            <constraint firstItem="jB8-kS-VOM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PeR-ra-yTt"/>
+                            <constraint firstItem="7zG-qr-HRD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bKh-nl-Rom"/>
+                            <constraint firstItem="7zG-qr-HRD" firstAttribute="centerX" secondItem="jB8-kS-VOM" secondAttribute="centerX" id="gzT-Ge-P5b"/>
+                            <constraint firstItem="7zG-qr-HRD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="li5-nE-skT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="占い" id="7eX-aE-OsO"/>
+                    <connections>
+                        <outlet property="pickerView" destination="7zG-qr-HRD" id="TOr-fW-J3j"/>
+                        <segue destination="WmU-1F-I11" kind="show" identifier="ResultSegue" id="j8U-hI-Fbv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="852.17391304347836" y="118.52678571428571"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="Sar-T0-gKA">
+            <objects>
+                <viewController id="WmU-1F-I11" customClass="ResultViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Iy-df-pya">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="牡羊座" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ud-qz-AcG">
+                                <rect key="frame" x="20" y="208" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="O3U-4S-vKb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ランキング" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkZ-yW-FcT">
+                                <rect key="frame" x="20" y="338" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jwg-Lx-3SU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVj-i9-sFk">
+                                <rect key="frame" x="177" y="388" width="60" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="義理や人情に囚われていると自分の居場所を無くし、苦労に終わりがありません。適度な要領のよさを持つことが必要です。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhh-CP-uvG">
+                                <rect key="frame" x="20" y="528" width="374" height="314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bVj-i9-sFk" firstAttribute="centerY" secondItem="5Iy-df-pya" secondAttribute="centerY" id="1zT-bW-DYn"/>
+                            <constraint firstItem="NkZ-yW-FcT" firstAttribute="top" secondItem="6ud-qz-AcG" secondAttribute="bottom" constant="30" id="6xK-Jm-Nhi"/>
+                            <constraint firstItem="1YQ-IA-z4n" firstAttribute="bottom" secondItem="yhh-CP-uvG" secondAttribute="bottom" constant="20" id="AcN-kJ-mpB"/>
+                            <constraint firstItem="6ud-qz-AcG" firstAttribute="leading" secondItem="1YQ-IA-z4n" secondAttribute="leading" constant="20" id="CB1-Uj-kUa"/>
+                            <constraint firstItem="bVj-i9-sFk" firstAttribute="centerX" secondItem="5Iy-df-pya" secondAttribute="centerX" id="OQq-gX-nXS"/>
+                            <constraint firstItem="yhh-CP-uvG" firstAttribute="top" secondItem="bVj-i9-sFk" secondAttribute="bottom" constant="20" id="PIy-6N-W6Q"/>
+                            <constraint firstItem="NkZ-yW-FcT" firstAttribute="leading" secondItem="1YQ-IA-z4n" secondAttribute="leading" constant="20" id="bAK-Xj-R5n"/>
+                            <constraint firstItem="yhh-CP-uvG" firstAttribute="leading" secondItem="1YQ-IA-z4n" secondAttribute="leading" constant="20" id="h3v-YK-7bu"/>
+                            <constraint firstItem="1YQ-IA-z4n" firstAttribute="trailing" secondItem="6ud-qz-AcG" secondAttribute="trailing" constant="20" id="jMd-SK-3Sf"/>
+                            <constraint firstItem="bVj-i9-sFk" firstAttribute="top" secondItem="NkZ-yW-FcT" secondAttribute="bottom" constant="20" id="lJT-mU-rob"/>
+                            <constraint firstItem="1YQ-IA-z4n" firstAttribute="trailing" secondItem="yhh-CP-uvG" secondAttribute="trailing" constant="20" id="pFT-Kd-GIL"/>
+                            <constraint firstItem="1YQ-IA-z4n" firstAttribute="trailing" secondItem="NkZ-yW-FcT" secondAttribute="trailing" constant="20" id="tdV-Bu-uZB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1YQ-IA-z4n"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wu9-R9-o8I"/>
+                    <connections>
+                        <outlet property="contentLabel" destination="yhh-CP-uvG" id="zql-Pr-LjJ"/>
+                        <outlet property="rankLabel" destination="bVj-i9-sFk" id="7De-ns-TKk"/>
+                        <outlet property="signLabel" destination="6ud-qz-AcG" id="q4Q-Rm-Jat"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCh-KM-ofk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540.5797101449277" y="118.52678571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cAf-EY-gPA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P17-RK-lBo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x6G-dv-GZs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JDA-2s-1zH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVC-G9-gfk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="118.52678571428571"/>
         </scene>
     </scenes>
 </document>
